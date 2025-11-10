@@ -27,6 +27,17 @@ Uses Pydantic models for schema definition and validation. This provides type sa
 - Reusable models across your application
 - Rich error messages for validation failures
 
+### Method 3: Tool Calling / Function Calling (`3_openai_tool_calling.py`)
+
+Demonstrates OpenAI's function calling feature where the LLM can intelligently route requests to appropriate tools/functions.
+
+**Advantages:**
+
+- Dynamic tool selection based on user queries
+- Multiple tool calls in a single conversation
+- Extensible architecture for adding new tools
+- Real-world use cases (weather, calculations, database, email, stocks)
+
 ## Setup
 
 This project uses [uv](https://github.com/astral-sh/uv) for fast Python package management.
@@ -101,6 +112,25 @@ This script demonstrates:
 - Field-level validation (e.g., age range 0-150, name validation)
 - Handling validation errors with clear error messages
 
+### Run Method 3 (Tool Calling):
+
+```bash
+uv run python 3_openai_tool_calling.py
+```
+
+Or with standard Python:
+
+```bash
+python 3_openai_tool_calling.py
+```
+
+This script demonstrates:
+
+- 5 different tools: weather, calculator, stock prices, email, database search
+- How the LLM intelligently routes queries to the right tools
+- Multiple tool calls in a single conversation
+- Real function execution with simulated data
+
 ## Key Differences
 
 | Feature           | Strict JSON Mode      | Pydantic AI              |
@@ -114,10 +144,11 @@ This script demonstrates:
 
 ## Examples Included
 
-Simple, easy-to-understand examples:
+Three comprehensive examples:
 
 1. **Method 1** - Person profile generation with strict JSON schema
 2. **Method 2** - Person profile with Pydantic validation and error handling
+3. **Method 3** - Tool calling with 5 different tools (weather, calculator, stocks, email, database)
 
 ## Requirements
 
